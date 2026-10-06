@@ -13,10 +13,9 @@ Kelas : B
    
 Program ini lanjutan dari Mini Project 1, masih dengan tema yang sama: mencatat satwa liar yang ditemui pendaki saat naik gunung. Bedanya, sekarang programnya tidak bisa langsung dipakai. Pengguna harus login terlebih dahulu pakai username dan password.
 
-Ada 2 jenis pengguna (role) yang hak aksesnya beda:
-
-admin → bisa tambah, tampilkan, ubah, dan hapus data (akses penuh)
-user (pendaki) → cuma bisa tambah dan tampilkan data saja
+Ada 2 jenis pengguna (role) yang hak aksesnya beda:<br>
+admin &rarr; bisa tambah, tampilkan, ubah, dan hapus data (akses penuh)<br>
+user (pendaki) &rarr; cuma bisa tambah dan tampilkan data saja
 
 Akun demo yang bisa dipakai buat coba program ini:
 
@@ -74,28 +73,22 @@ Data akun (akun) dan daftar menu per role (akses_menu) disimpan sebagai dictiona
 (Karakter password tampil sebagai * berkat library pwinput, bukan tersembunyi total seperti getpass.)
 
 
-**Contoh Output — Login Berhasil (role admin)**
-
+**Contoh Output — Login Berhasil (role admin)**<br>
 <img width="242" height="183" alt="image" src="https://github.com/user-attachments/assets/3e3098bf-36a4-4027-bb91-b8a130b21ffc" />
 
-**Contoh Output — Login Berhasil (role user, menu terbatas)**
-
+**Contoh Output — Login Berhasil (role user, menu terbatas)**<br>
 <img width="275" height="167" alt="image" src="https://github.com/user-attachments/assets/0cb82a7e-8b42-4c6b-924a-1f9a317bec59" />
 
-**Contoh Output — Tambah Data**
-
+**Contoh Output — Tambah Data**<br>
 <img width="219" height="229" alt="image" src="https://github.com/user-attachments/assets/dfb1978c-d00b-4e5d-b1a5-549c773c04f5" />
 
-**Contoh Output — Input Salah (ditangani error handling)**
-
+**Contoh Output — Input Salah (ditangani error handling)**<br>
 <img width="165" height="62" alt="image" src="https://github.com/user-attachments/assets/e29c70b0-6f68-4c52-b6ab-f3ea54e4ecc5" />
 
-**Contoh Output — Tampilkan Semua Data**
-
+**Contoh Output — Tampilkan Semua Data**<br>
 <img width="293" height="69" alt="image" src="https://github.com/user-attachments/assets/e426bc58-1777-49f9-8cd0-9175a8141810" />
 
-**Contoh Output — Hapus Data**
-
+**Contoh Output — Hapus Data**<br>
 <img width="325" height="77" alt="image" src="https://github.com/user-attachments/assets/99377fdf-7a32-47d2-ac19-53b476cb3e05" />
 
 ----------------------------------------
@@ -105,7 +98,7 @@ Input angka (jumlah satwa dan ketinggian) divalidasi menggunakan try/except di d
 
 <img width="277" height="126" alt="image" src="https://github.com/user-attachments/assets/058a6db5-827c-4f21-88fd-5da1dcc695eb" />
 
-Jika pengguna mengetik huruf atau teks lain (bukan angka), Python akan memunculkan ValueError saat dikonversi dengan int(). Error ini ditangkap oleh blok except, sehingga program tidak berhenti/crash, melainkan menampilkan pesan dan meminta input ulang.
+Jika pengguna mengetik huruf atau teks lain (bukan angka), Python akan memunculkan ValueError saat dikonversi dengan int(). Di sini, ValueError berfungsi sebagai penanda spesifik agar program tau jenis kesalahan yang harus ditangani. Error ini ditangkap oleh blok except, sehingga program tidak berhenti/crash, melainkan menampilkan pesan dan meminta input ulang.
 
 ----------------------------------------
 **5. Penerapan 3 library**
