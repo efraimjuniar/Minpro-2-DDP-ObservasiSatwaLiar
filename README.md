@@ -69,3 +69,51 @@ Data akun (akun) dan daftar menu per role (akses_menu) disimpan sebagai dictiona
 
 **Contoh Output — Login Gagal**
 
+<img width="196" height="123" alt="image" src="https://github.com/user-attachments/assets/c69d8447-9fd3-4485-8036-ac19fd06ba33" />
+
+(Karakter password tampil sebagai * berkat library pwinput, bukan tersembunyi total seperti getpass.)
+
+
+**Contoh Output — Login Berhasil (role admin)**
+
+<img width="242" height="183" alt="image" src="https://github.com/user-attachments/assets/3e3098bf-36a4-4027-bb91-b8a130b21ffc" />
+
+**Contoh Output — Login Berhasil (role user, menu terbatas)**
+
+<img width="275" height="167" alt="image" src="https://github.com/user-attachments/assets/0cb82a7e-8b42-4c6b-924a-1f9a317bec59" />
+
+**Contoh Output — Tambah Data**
+
+<img width="219" height="229" alt="image" src="https://github.com/user-attachments/assets/dfb1978c-d00b-4e5d-b1a5-549c773c04f5" />
+
+**Contoh Output — Input Salah (ditangani error handling)**
+
+<img width="165" height="62" alt="image" src="https://github.com/user-attachments/assets/e29c70b0-6f68-4c52-b6ab-f3ea54e4ecc5" />
+
+**Contoh Output — Tampilkan Semua Data**
+
+<img width="293" height="69" alt="image" src="https://github.com/user-attachments/assets/e426bc58-1777-49f9-8cd0-9175a8141810" />
+
+**Contoh Output — Hapus Data**
+
+<img width="325" height="77" alt="image" src="https://github.com/user-attachments/assets/99377fdf-7a32-47d2-ac19-53b476cb3e05" />
+
+----------------------------------------
+**4. Validasi input dengan error handling**
+
+Input angka (jumlah satwa dan ketinggian) divalidasi menggunakan try/except di dalam function input_angka():
+
+<img width="277" height="126" alt="image" src="https://github.com/user-attachments/assets/058a6db5-827c-4f21-88fd-5da1dcc695eb" />
+
+Jika pengguna mengetik huruf atau teks lain (bukan angka), Python akan memunculkan ValueError saat dikonversi dengan int(). Error ini ditangkap oleh blok except, sehingga program tidak berhenti/crash, melainkan menampilkan pesan dan meminta input ulang.
+
+----------------------------------------
+**5. Penerapan 3 library**
+
+Program ini menggunakan 3 library Python, seluruhnya dari materi yang sudah diajarkan di praktikum:
+
+library | Kegunaan dalam Program                                                                      |
+--------|---------------------------------------------------------------------------------------------|
+pwinput | Menyamarkan input password saat login (tampil sebagai *, tidak polos seperti input() biasa) |
+time	  | Mencatat tanggal observasi secara otomatis setiap kali data ditambahkan                     |
+os      | Membersihkan layar terminal (bersihkan_layar()) saat program pertama dijalankan             |
