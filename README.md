@@ -2,20 +2,17 @@
 
 Sistem Pengelolaan Data Observasi Satwa Liar Saat Pendakian — Mini Project 2 Praktikum Dasar-Dasar Pemrograman (DDP)
 
-Nama : Efraim Juniar Tonda Kala' 
-
-NIM : 2609116064 
-
+Nama : Efraim Juniar Tonda Kala'<br>
+NIM : 2609116064<br>
 Kelas : B
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-**1. Deskripsi Program**
-   
+**1. Deskripsi Program**<br>
 Program ini lanjutan dari Mini Project 1, masih dengan tema yang sama: mencatat satwa liar yang ditemui pendaki saat naik gunung. Bedanya, sekarang programnya tidak bisa langsung dipakai. Pengguna harus login terlebih dahulu pakai username dan password.
 
 Ada 2 jenis pengguna (role) yang hak aksesnya beda:<br>
-admin &rarr; bisa tambah, tampilkan, ubah, dan hapus data (akses penuh)<br>
-user (pendaki) &rarr; cuma bisa tambah dan tampilkan data saja
+**admin** &rarr; bisa tambah, tampilkan, ubah, dan hapus data (akses penuh)<br>
+**user (pendaki)** &rarr; cuma bisa tambah dan tampilkan data saja
 
 Akun demo yang bisa dipakai buat coba program ini:
 
@@ -29,19 +26,16 @@ Secara struktur, program ini dipecah jadi beberapa function supaya tidak ada kod
 Program ini juga memanfaatkan 3 library tambahan: pwinput untuk menyamarkan input password jadi tanda bintang (*) saat login, time untuk mencatat tanggal otomatis setiap kali data satwa ditambahkan, dan os untuk membersihkan layar terminal di awal program. Sebagai nilai tambah, validasi input angka (jumlah dan ketinggian) juga sudah memakai error handling (try/except), jadi kalau pengguna salah ketik (misalnya masukkan huruf padahal diminta angka), program tidak akan crash, tapi akan menampilkan pesan error dan minta input ulang.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-**2. FLOWCHART & Penjelasan Alur**
-
+**2. FLOWCHART & Penjelasan Alur**<br>
 <img width="279" height="395" alt="image" src="https://github.com/user-attachments/assets/b7616d45-508a-424e-a7d1-6ee41763d1d8" />
 
 
 Flowchart Mini Project 1 dikembangkan menjadi satu diagram gabungan yang mencakup alur login sekaligus alur menu utama. Alurnya bisa dibagi jadi dua bagian besar:
 
-**Bagian 1 — Login**
-
+**Bagian 1 — Login**<br>
 Program dimulai dengan meminta username dan password. Kedua input ini dicocokkan dengan data yang tersimpan di dalam dictionary akun. Kalau cocok, program akan mengambil role milik username tersebut (admin atau user) dari dictionary itu, menampilkan pesan "Login berhasil", lalu lanjut ke bagian menu. Kalau tidak cocok, jumlah percobaan ditambah satu, lalu dicek lagi: kalau percobaan masih kurang dari 3 kali, program minta input username/password ulang (balik ke awal); kalau sudah gagal 3 kali, program menampilkan pesan bahwa login gagal dan program langsung berhenti.
 
-**Bagian 2 — Menu Utama**
-
+**Bagian 2 — Menu Utama**<br>
 Setelah login berhasil, program menampilkan daftar menu — tapi isinya tidak sama untuk semua orang, karena diambil dari dictionary akses_menu sesuai role masing-masing. Kalau role-nya admin, menunya lengkap (Tambah, Tampilkan, Ubah, Hapus, Logout). Kalau role-nya user, menunya terbatas (Tambah, Tampilkan, Logout saja). Setelah menu ditampilkan, program meminta pilihan dari pengguna. Kalau pilihannya logout, program menampilkan pesan "Logout berhasil" dan berhenti. Kalau bukan logout, program menjalankan proses sesuai pilihan tersebut (Tambah/Tampilkan Data, atau Ubah/Hapus Data khusus untuk admin), lalu kembali lagi ke tampilan menu supaya pengguna bisa pilih menu lain tanpa harus login ulang.
 
 Intinya, flowchart MP1(menu berulang pakai while) sekarang "dibungkus" dengan tahap login di depannya, dan menu yang ditampilkan jadi dinamis, bentuknya menyesuaikan siapa yang login.
@@ -66,8 +60,7 @@ main()                                                     |	Menjalankan program
 
 Data akun (akun) dan daftar menu per role (akses_menu) disimpan sebagai dictionary, sedangkan data observasi satwa (data_satwa) tetap berupa list berisi tuple: (nama, jumlah, tinggi, status, zona, tanggal)
 
-**Contoh Output — Login Gagal**
-
+**Contoh Output — Login Gagal**<br>
 <img width="196" height="123" alt="image" src="https://github.com/user-attachments/assets/c69d8447-9fd3-4485-8036-ac19fd06ba33" />
 
 (Karakter password tampil sebagai * berkat library pwinput, bukan tersembunyi total seperti getpass.)
@@ -92,17 +85,14 @@ Data akun (akun) dan daftar menu per role (akses_menu) disimpan sebagai dictiona
 <img width="325" height="77" alt="image" src="https://github.com/user-attachments/assets/99377fdf-7a32-47d2-ac19-53b476cb3e05" />
 
 ----------------------------------------
-**4. Validasi input dengan error handling**
-
-Input angka (jumlah satwa dan ketinggian) divalidasi menggunakan try/except di dalam function input_angka():
-
+**4. Validasi input dengan error handling**<br>
+Input angka (jumlah satwa dan ketinggian) divalidasi menggunakan try/except di dalam function input_angka():<br>
 <img width="277" height="126" alt="image" src="https://github.com/user-attachments/assets/058a6db5-827c-4f21-88fd-5da1dcc695eb" />
 
 Jika pengguna mengetik huruf atau teks lain (bukan angka), Python akan memunculkan ValueError saat dikonversi dengan int(). Di sini, ValueError berfungsi sebagai penanda spesifik agar program tau jenis kesalahan yang harus ditangani. Error ini ditangkap oleh blok except, sehingga program tidak berhenti/crash, melainkan menampilkan pesan dan meminta input ulang.
 
 ----------------------------------------
-**5. Penerapan 3 library**
-
+**5. Penerapan 3 library**<br>
 Program ini menggunakan 3 library Python, seluruhnya dari materi yang sudah diajarkan di praktikum:
 
 library | Kegunaan dalam Program                                                                      |
